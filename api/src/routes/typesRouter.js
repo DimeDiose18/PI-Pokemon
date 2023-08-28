@@ -1,9 +1,16 @@
-const {Router} = require('express');
+const { Router } = require("express");
+const axios = require("axios");
+const { getTypeApi } = require("../controllers/getTypeApi");
 
 const typesRouter = Router();
 
-typesRouter.get('/types', function(req,res){
-    res.send("Estoy en el /types de pokemons")
+typesRouter.get("/", async (req, res) => {
+try {
+  const resultType = await getTypeApi()
+  res.status(200).json(resultType)
+} catch (error) {
+  res.status(500).json({message: "Server Error", error})
+}
 });
 
 module.exports = typesRouter;
