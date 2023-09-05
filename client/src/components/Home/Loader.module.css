@@ -1,0 +1,32 @@
+.backgroundContainer {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.containerMain{
+    display: flex;
+    position: relative;
+}
+
+.loader {   
+    border: 10px solid var(--white);
+    border-top: 10px solid var(--black);
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    animation: Loader_spin__n918N 1s linear infinite;
+    position: relative;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+}
