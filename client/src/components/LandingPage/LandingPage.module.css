@@ -1,0 +1,70 @@
+.main {
+  background-color: var(--primary-background);
+  height: 80vh;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 100%;
+}
+
+.welcomeText {
+  font-family: "Dancing";
+}
+
+.button {
+  display: flex;
+  background-color: transparent;
+  color: var(--white);
+  border: 3px solid var(--primary-color);
+  border-radius: 20px;
+  padding: 1px 41px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 var(--primary-color);
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.5s;
+}
+
+.button:hover {
+  box-shadow: inset 300px 0 0 0 var(--primary-color);
+}
+
+.arrow {
+  width: 50px;
+}
+
+@media (min-width: 767px) {
+  .welcomeText {
+    font-family: "Dancing";
+    font-size: 25px;
+  }
+  .imageContainer {
+    width: 350px;
+  }
+
+}
+
+@media (max-width: 767px){
+  .welcomeText {
+    font-family: "Dancing";
+    font-size: 10px;
+  }
+  .imageContainer {
+  width: 200px;
+}
+.button {
+  padding: 1px 12px;
+  width: 80px;
+}
+
+}
