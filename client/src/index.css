@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@font-face {
+  font-family: "Dancing";
+  src: url('./assets/fonts/DancingScript-Regular.ttf');
+}
+/* VAR GLOBAL */
+:root {
+  --white: #D9D9D9;
+  --black: #111111;
+  --primary-color: #A10FE6;
+  --secondary-color: #00D5FF;
+  --primary-background: rgba(12, 7, 34, 0.87);
+  --secondary-backgrund: rgba(9, 6, 21, 0.78);
+  --full-color-background:rgba(161, 15, 230, 0.37);
+  --footer-color: rgba(12, 7, 34, 0.78);
+  --info-color-backgound: rgba(0, 0, 0, 0.11);
+}
