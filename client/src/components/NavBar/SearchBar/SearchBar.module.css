@@ -1,0 +1,14 @@
+.containerSearch {
+    display: flex;
+}
+
+.searchImg {
+    width: 25px;
+    height: 25px;
+    padding: 0;
+}
+
+.searchImg img {
+    width: 20px;
+    height: 20px;
+}
