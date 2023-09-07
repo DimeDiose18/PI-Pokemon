@@ -24,7 +24,7 @@ const router = createBrowserRouter([
     element: <Home />,
     children: [
       {
-        path: "/home/pokemons/:pokemonsid",
+        path: "/home/pokemons/:pokemonName",
         element: <Detail />,
       },
     ],
