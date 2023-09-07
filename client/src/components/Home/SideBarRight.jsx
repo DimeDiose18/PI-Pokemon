@@ -1,1 +1,0 @@
-// muestra del componente detail dependiendo el id
