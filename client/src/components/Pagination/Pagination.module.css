@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.buttonPrevius {
+  transform: rotateX(180 deg);
+  width: 48px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.buttonNext {
+  width: 48px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.prevImg {
+  width: 100%;
+  transform: rotateY(180deg);
+}
+.nextImg {
+  width: 100%;
+}
+
+.input {
+  padding: 5px 10px;
+  width: 25px;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.prevImg:active,
+.nextImg:active {
+  background-color: var(--primary-background);
+  border-radius: 50%;
+}
