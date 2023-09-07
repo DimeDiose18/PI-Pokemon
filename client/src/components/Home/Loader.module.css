@@ -6,27 +6,8 @@
 }
 
 
-
-.containerMain{
-    display: flex;
-    position: relative;
+.loader {
+    width: 150px;
 }
 
-.loader {   
-    border: 10px solid var(--white);
-    border-top: 10px solid var(--black);
-    border-radius: 50%;
-    width: 90px;
-    height: 90px;
-    animation: Loader_spin__n918N 1s linear infinite;
-    position: relative;
-}
 
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-}
