@@ -4,8 +4,8 @@ const filterInfo = require("../utils/filterInfo")
 // Traigo los datos de la api
 
 const getApiInfo = async (page) => {
-  const offset = page * 12
-  console.log(offset);
+  const offset = (page - 1) * 12
+  console.log("pageeee", page);
   const url = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=12`;
   const data = await axios.get(url).then(response => response.data.results)
   const allPokemons = data.map(async (e)=> {
