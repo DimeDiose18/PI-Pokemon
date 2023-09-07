@@ -7,7 +7,7 @@ const filterInfo = require("../utils/filterInfo");
 const pokemonsRouter = Router();
 //GET /pokemons
 pokemonsRouter.get("/", async (req, res) => {
-  const { page } = req.body;
+  const { page } = req.query;
   try {
     const allPokemons = await getAllPokemons(page);
     res.status(200).json(allPokemons);
