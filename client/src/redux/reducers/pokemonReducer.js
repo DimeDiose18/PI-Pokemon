@@ -1,8 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { fetchPokemons } from "../actions"
 
 const initialState = {
     pokemons: [],
     pokemonsDetails: null,
+    loading: false,
+    error: null,
 };
 
 const pokemonSlice = createSlice({
@@ -16,10 +19,24 @@ const pokemonSlice = createSlice({
         setPokemonDetails: (state, action) => {
             state.pokemonsDetails = action.payload;
             //actualiza los detalles de cada pokemon
-        }
+        },
+    },
+    extraReducers: (builder) => {
+        builder
+        .addCase(fetchPokemons.pending, (state)=> {
+            state.loading = true;
+        })
+        .addCase(fetchPokemons.fulfilled, (state, action)=> {
+            state.loading = false;
+            state.pokemons = action.payload;
+        })
+        .addCase(fetchPokemons.rejected, (state, action)=>{
+            state.loading = false;
+            state.error = action.error.message;
+        })
 
     }
 })
 
-export const {getPokemons, setPokemonDetails} = pokemonSlice.actions;
 export default pokemonSlice.reducer;
+export const { getPokemons, setPokemonDetails} = pokemonSlice.actions;
