@@ -1,0 +1,13 @@
+.containerMain{
+    background-color: var(--primary-background);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.socialNet {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 8px;
+    width: 24%;
+}
