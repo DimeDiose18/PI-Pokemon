@@ -13,11 +13,15 @@ module.exports = (sequelize) => {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true
     },
     image: {
       type: DataTypes.STRING,
       allowNull: true,
-      defaultValue: "https://i.imgur.com/R1WxMTs.png",
+    },
+    altImage: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     hp: {
       type: DataTypes.INTEGER,
@@ -54,7 +58,6 @@ module.exports = (sequelize) => {
       comment: "Weight of the pokemon in kilograms."
     },
 
-    // nose aun pa que me sirve
     createdPokemon: {
       type: DataTypes.BOOLEAN,
       defaultValue: true,
