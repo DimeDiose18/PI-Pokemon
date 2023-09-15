@@ -1,37 +1,106 @@
 const { Router } = require("express");
 const { Pokemon, Type } = require("../db");
-const getAllPokemons = require("../controllers/getAllPokemons");
 const { default: axios } = require("axios");
 const filterInfo = require("../utils/filterInfo");
+const savePokemon = require("../controllers/savePokemons");
+const { POKEMONS_API_URL } = require("../constants");
 
 const pokemonsRouter = Router();
 //GET /pokemons
 pokemonsRouter.get("/", async (req, res) => {
-  const { page } = req.query;
   try {
-    const allPokemons = await getAllPokemons(page);
+    const allPokemons = await await Pokemon.findAll({
+      include: {
+        model: Type,
+        attributes: ["name", "image"],
+        through: {
+          attributes: [],
+        },
+      },
+    });
     res.status(200).json(allPokemons);
   } catch (error) {
-    res.status(500).json({ error: "No hay pokemons" });
+    res.status(500).json(error.message);
   }
 });
+
+//GET /pokemons/savedpokemons
+
+const sendPokemonsInBatches = async (pokemonData) => {
+  console.log(pokemonData.length, "post");
+  const batchSize = 200;
+  const URL = POKEMONS_API_URL;
+  const batchesToProcess = [];
+
+  for (let i = 0; i < pokemonData.length; i += batchSize) {
+    const batch = pokemonData.slice(i, i + batchSize);
+    batchesToProcess.push(batch);
+  }
+
+  for (const batch of batchesToProcess) {
+    const postPromises = batch.map(async (pokemonInfo) => {
+      try {
+        pokemonInfo
+        const response = await axios.post(URL, pokemonInfo);
+        return response.data;
+      } catch (error) {
+        console.error("Error al guardar el Pokemon:", error.message);
+        return null;
+      }
+    });
+
+    const batchResponses = await Promise.all(postPromises);
+    console.log(batchResponses);
+  }
+};
+
+pokemonsRouter.get("/savePokemons", async (req, res) => {
+  try {
+    const pokemonsReady = await savePokemon();
+    console.log(pokemonsReady.length, "get");
+    const invalidPokemons = [];
+
+    pokemonsReady.forEach((pokemon) => {
+      if (!isValidPokemon(pokemon)) {
+        invalidPokemons.push(pokemon);
+        console.log("Registro inválido:", pokemon);
+      }
+    });
+    const validPokemons = pokemonsReady.filter((pokemon) =>
+      isValidPokemon(pokemon)
+    );
+
+    await sendPokemonsInBatches(validPokemons);
+
+    res.status(200).json(validPokemons);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+function isValidPokemon(pokemon) {
+  return pokemon && pokemon.name !== null && true;
+}
+
 // GET /pokemons/name
 
 pokemonsRouter.get("/name", async (req, res) => {
   const { name } = req.query;
-  const allPokemons = await axios
-    .get(`https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`)
-    .then((response) => response.data)
-    .catch((error) => console.error(error));
-
+  console.log("kmdkf");
   const findPokemonDB = async () => {
-    const data = await Pokemon.findAll({
+    const data = await Pokemon.findOne({
       where: { name: name.toLowerCase() },
+      include: {
+        model: Type,
+        attributes: ["name", "image"],
+        through: {
+          attributes: [],
+        },
+      },
     });
     return data;
   };
-
-  const data = allPokemons ? filterInfo(allPokemons) : await findPokemonDB();
+  const data = await findPokemonDB();
 
   try {
     if (data) {
@@ -70,7 +139,8 @@ pokemonsRouter.get("/:id", async (req, res) => {
 pokemonsRouter.post("/", async (req, res) => {
   const {
     name,
-    img,
+    image,
+    altImage,
     hp,
     attack,
     specialAttack,
@@ -84,7 +154,8 @@ pokemonsRouter.post("/", async (req, res) => {
   try {
     let newPokemon = await Pokemon.create({
       name,
-      img,
+      image,
+      altImage,
       hp,
       attack,
       specialAttack,
@@ -103,7 +174,8 @@ pokemonsRouter.post("/", async (req, res) => {
 
     res.status(200).json({ message: "El pokemon ha sido creado con exito" });
   } catch (error) {
-    res.status(500).json({ message: "Error de servidor", error });
+    const { detail } = error.parent;
+    res.status(500).json(detail);
   }
 });
 

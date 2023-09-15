@@ -1,9 +1,9 @@
-function filterInfo(data) {
+function filterInfoForSave(data) {
   try {
     if (!data) {
+      console.log(data);
       throw new Error("Los datos de entrada son nulos o indefinidos.");
     }
-
     if (
       data.id &&
       data.name &&
@@ -22,17 +22,11 @@ function filterInfo(data) {
       data.weight
     ) {
       return {
-        id: data.id,
         name: data.name,
-        img: data.sprites.versions["generation-v"]["black-white"].animated
-          .front_default,
-        altImage: data.sprites.other.home.front_default,
-        types: data.types.map((e) => {
-          return {
-            name: e.type.name,
-            img: `https://typedex.app/app/images/ui/types/dark/${e.type.name}.svg`,
-          };
-        }),
+        image:
+          data.sprites.versions["generation-v"]["black-white"].animated
+            .front_default,
+        altImage: data.sprites.other["official-artwork"].front_default,
         hp: data.stats[0].base_stat,
         attack: data.stats[1].base_stat,
         specialAttack: data.stats[3].base_stat,
@@ -41,6 +35,7 @@ function filterInfo(data) {
         speed: data.stats[5].base_stat,
         height: data.height,
         weight: data.weight,
+        types: data.types.map((e) => e.type.name),
       };
     } else {
       throw new Error("Los datos de entrada no tienen la estructura esperada.");
@@ -50,4 +45,4 @@ function filterInfo(data) {
   }
 }
 
-module.exports = filterInfo;
+module.exports = filterInfoForSave;
