@@ -5,7 +5,7 @@ const initialState = {
 };
 
 const userSlice = createSlice({
-    name: "users", //nombre del pedazo del estado global
+    name: "users", 
     initialState,
     reducers: {
         getUsers: (state, action) => {
