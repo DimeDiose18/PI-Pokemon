@@ -1,0 +1,150 @@
+.background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background: url("../../assets/images/fondoKawai.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.containerMain {
+  color: var(--primary-background);
+  text-align: center;
+  padding: 2rem 3rem;
+  border: 3px solid var(--white);
+  box-shadow: 0 0 25px #222;
+  backdrop-filter: blur(5px);
+  width: 40%;
+  height: 70%;
+  font-family: "Quick";
+}
+.nameimageContainer {
+  display: grid;
+}
+
+.labels {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--primary-background);
+  font-family: "Quick";
+}
+
+.inputText {
+  width: 45%;
+  padding: 5px 5px;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 2px solid var(--primary-color);
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-family: "Quick";
+  color: var(--white);
+}
+
+input[type="text"] {
+  background-color: rgb(123 65 177 / 78%);
+}
+
+.containerTypes {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+.labelType {
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Quick";
+  color: var(--primary-background);
+}
+.types {
+  display: flex;
+  justify-content: center;
+}
+
+.minimalDesing {
+  background-color: rgb(123 65 177 / 78%);
+  border: thin solid rgb(137 120 190);
+  border-radius: 4px;
+  line-height: 24px;
+  padding: 6px 0px;
+  scrollbar-color: var(--white);
+  margin: 0 10px;
+  font-family: "Quick";
+  color: var(--white);
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  font-family: "Quick";
+}
+.button[disabled] {
+  border: 2px solid #ff0000;
+}
+
+.button img {
+  width: 100%;
+}
+
+.pError {
+  margin: 2px 0px 0px 0px;
+  font-size: 12px;
+  font-family: "Quick";
+  opacity: 50%;
+  color: #ff0000;
+}
+
+.containerStats {
+  display: grid;
+  justify-content: center;
+}
+
+.containerStats h1 {
+  margin: 5px;
+  font-family: "Quick";
+}
+
+.containerStats label {
+  display: flex;
+  align-items: flex-end;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Quick";
+}
+
+input[type="range"] {
+  accent-color: var(--full-color-background);
+  cursor: pointer;
+}
+
+.containerFirst {
+  display: grid;
+  justify-items: start;
+}
+
+.containerSecond {
+  display: grid;
+  justify-items: start;
+}
+
+.btnCreated {
+  background-color: rgb(123 65 177 / 78%);
+  border: 2px solid var(--primary-color);
+  border-radius: 4px;
+  padding: 6px 10px;
+  margin: 10px;
+  cursor: pointer;
+  font-family: "Quick";
+  box-shadow: rgb(0, 0, 0) 0px 5px 10px;
+  color: var(--white);
+}
