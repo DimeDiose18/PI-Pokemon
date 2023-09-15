@@ -1,45 +1,52 @@
-.cardContainer{
-    background-color: aquamarine;
-    display: flex;
-    justify-content: space-around;
-    margin: 10px;
-    border-radius: 10px;
+.cardContainer {
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 5px;
 }
 
-.pokemonImage{
-    width: 100px;
-    height: 100px;
+.pokemonImage {
+  width: 100px;
+  height: 100px;
 }
 
-.mainContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.mainContainer {
+  display: grid;
+  justify-items: end;
 }
 
-.nameContainer{
-display: flex;
+.nameContainer {
+  display: flex;
 }
 
-.pokemonName{
-    font-size: medium;
+.pokemonName {
+  font-size: 20px;
+  margin: 10px;
+  font-family: "Quick";
+  text-shadow: 1px 1px 2px var(--black), 0 0 1em rgb(204, 0, 255),
+    0 0 0.2em rgb(204, 0, 255);
 }
+
 
 .typesContainer {
-display: flex;
+  display: flex;
+  margin: auto;
 }
 
-.type{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
+.type {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
 }
 
 .pType {
-    margin: 5px;
-    font-size: 11px;
+  margin: 5px;
+  font-size: 11px;
+  font-family: "Quick"
 }
 
-.imgType{
-    width: 35px;
+.imgType {
+  width: 35px;
 }
