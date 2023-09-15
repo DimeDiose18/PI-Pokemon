@@ -1,0 +1,57 @@
+.containerMain {
+  display: flex;
+  background-color: var(--full-color-background);
+  font-family: "Quick";
+}
+.filters {
+  width: 50%;
+  display: flex;
+  margin: 10px;
+  align-items: end;
+}
+
+.titleContain{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.titles {
+  font-weight: bold;
+  display: flex;
+    flex-direction: column;
+    margin: 8px;
+    color: var(--white)
+
+}
+
+.iconOrder{
+    width: 22px;
+    height: 22px;
+    margin-left: 5px;  
+}
+.iconFilter{
+  width: 20px;
+    height: 20px;
+    margin-left: 5px;  
+}
+.selects {
+  background-color: rgb(123 65 177 / 78%);
+  border: thin solid rgb(137 120 190);
+  border-radius: 4px;
+  line-height: 24px;
+  padding: 6px 0px;
+  scrollbar-color: var(--white);
+  font-family: "Quick";
+  color: var(--white)
+
+}
+
+.containerForm {
+  display: inline-flex;
+}
+
+.inputRadio {
+  color: var(--secondary-color);
+  font-weight: lighter;
+}
