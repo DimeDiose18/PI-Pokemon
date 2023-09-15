@@ -3,14 +3,14 @@ import styles from "./Nav.module.css";
 import logoPokemon from "../../assets/images/LogoGrande.png";
 import SearchBar from "./SearchBar/SearchBar";
 
-const Nav = () => {
+const Nav = ({setSearchTerm}) => {
     return (
         <nav className={styles.navBar}>
         <div className={styles.logoContainer}>
             <img src={logoPokemon} alt="Logo Pokemon" className={styles.logo}/>
         </div>
         <div>
-            <SearchBar />
+            <SearchBar setSearchTerm={setSearchTerm}/>
         </div>
             <ul>
                 <li>

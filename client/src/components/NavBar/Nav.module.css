@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 60px;
 }
 
 .logoContainer {
@@ -22,6 +23,7 @@
     padding: 0;
     margin: 0;
     display: flex;
+    font-family: "Quick"
 }
 
 .navBar ul li a {
