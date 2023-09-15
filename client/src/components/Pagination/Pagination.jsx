@@ -1,44 +1,30 @@
 import styles from "./Pagination.module.css";
 import arrow from "../../assets/images/circulo-de-flecha.png";
-import { useEffect, useState } from "react";
+import { useRef } from "react";
 
-const Pagination = ({
-  currentPage,
-  totalPages,
-  onPageChange,
-  isLoading,
-  onPageInputChange,
-}) => {
-  const [page, setPage] = useState();
-  const [inputValue, setInputValue] = useState(currentPage.toString());
+const  Pagination = ({ currentPage, totalPages, onPageChange, isLoading }) => {
+  const input = useRef();
 
-  useEffect(() => {
-    setPage(currentPage);
-    setInputValue(currentPage.toString());
-  }, [currentPage]);
-
+ 
   const handlePreviusClick = () => {
     if (!isLoading && currentPage > 1) {
-      onPageChange(Number(currentPage) - 1);;
+      input.current.value = Number(currentPage) - 1;
+      onPageChange(Number(currentPage) - 1);
     }
   };
 
   const handleNextClick = () => {
     if (!isLoading && currentPage < totalPages) {
+      input.current.value = Number(currentPage) + 1;
       onPageChange(Number(currentPage) + 1);
     }
   };
 
-  const handleSearchPage = (e) => {
-    setInputValue(e.target.value);
-  };
-
   const handleEnterKey = (event) => {
-    if (event.key === "Enter" && inputValue !== page.toString()) {
-      onPageInputChange(inputValue);
+    if (event.key === "Enter") {
+      onPageChange(event.target.value);
     }
   };
-  
 
   return (
     <div className={styles.container}>
@@ -50,13 +36,13 @@ const Pagination = ({
         <img src={arrow} className={styles.prevImg} alt="buttonPrevius" />
       </button>
       <input
-        value={inputValue}
-        onChange={handleSearchPage}
+        defaultValue={currentPage}
+        ref={input}
         onKeyDown={handleEnterKey}
         type="text"
         className={styles.input}
       />
-      <p> de {totalPages}</p>
+      <p className={styles.p}> de {totalPages}</p>
       <button
         className={styles.buttonNext}
         onClick={handleNextClick}
