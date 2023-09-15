@@ -15,12 +15,21 @@ code {
   font-family: "Dancing";
   src: url('./assets/fonts/DancingScript-Regular.ttf');
 }
+@font-face {
+  font-family: "Quick";
+  src: url('./assets/fonts/Quicksand-Regular.ttf');
+}
+@font-face {
+  font-family: "Abril";
+  src: url('./assets/fonts/AbrilFatface-Regular.ttf');
+}
 /* VAR GLOBAL */
 :root {
   --white: #D9D9D9;
   --black: #111111;
   --primary-color: #A10FE6;
   --secondary-color: #00D5FF;
+  --background: rgba(14, 10, 33, 1);
   --primary-background: rgba(12, 7, 34, 0.87);
   --secondary-backgrund: rgba(9, 6, 21, 0.78);
   --full-color-background:rgba(161, 15, 230, 0.37);
