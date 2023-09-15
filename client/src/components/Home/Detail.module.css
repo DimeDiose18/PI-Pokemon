@@ -1,0 +1,196 @@
+.containerLoading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  height: 70%;
+}
+.imageLoading {
+  width: 70%;
+}
+
+.sideBarRight{
+  display: block;
+}
+
+/*X*/
+
+.buttonClose {
+  background-color: var(--full-color-background);
+  border: none;
+  border-radius: 10px;
+  color: var(--secondary-color);
+  margin-left: 2px;
+  padding: 2px 6px;
+  font-size: 10px;
+  cursor: pointer;
+  font-family: "Quick";
+}
+
+/*ID*/
+
+.containerID {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+}
+
+.containerID h6 {
+  background-color: var(--full-color-background);;
+  box-shadow: 0px 5px 10px rgb(27, 27, 27);
+  border-radius: 10px;
+  padding: 5px;
+  color: var(--white);
+  margin: -7px;
+  font-size: 10px;
+  font-family: "Quick";
+}
+
+/*container*/
+.containerMain {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height:  255px;
+}
+
+/*Name styles*/
+.pokemonName {
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  
+}
+.pokemonName h1 {
+  margin: 20px;
+  font-size: 35px;
+  color: var(--white);
+  font-family: "Quick";
+  text-shadow: 1px 1px 2px var(--black), 0 0 1em rgb(204, 0, 255),
+    0 0 0.2em rgb(204, 0, 255);
+}
+
+/*Img Styles*/
+
+.pokemonDetailImg {
+  width: 100px;
+  margin-top: 10px;
+}
+
+/*Specs Styles*/
+.containerSpecs {
+  display: grid;
+  justify-items: stretch;
+  padding: 8px;
+}
+.containerSpecs p {
+  font-family: "Quick";
+  color: var(--white);
+  font-size: 16px;
+}
+
+.specs {
+  background-color: var(--full-color-background);
+  box-shadow: 0px 5px 10px rgb(27, 27, 27);
+  border-radius: 10px;
+  padding: 8px;
+  margin: 0;
+  font-size: 17px;
+  color: var(--white);
+  font-family: "Quick"
+}
+.specs h3 {
+  margin: 0;
+}
+
+/* Types styles */
+.containerTypes {
+  display: grid;
+  justify-items: center;
+  height: 180px;
+}
+
+.titleType {
+  display: grid;
+  justify-items: center;
+  background-color: var(--full-color-background);
+  box-shadow: 0px 5px 10px rgb(27, 27, 27);
+  font-size: 14px;
+  color: var(--white);
+  font-family: "Quick";
+  border-radius: 10px;
+  width: 60px;
+  height: 25px;
+  padding: 6px;
+  margin: 0 0 10px 0;
+}
+
+.typeDetail {
+  width: 100px;
+  height: 100px;
+  display: grid;
+  justify-items: center;
+}
+
+.pTypeDetail {
+  margin: 5px 0 0 0;
+  font-size: 15px;
+  font-family: "Quick";
+  color: var(--white);
+}
+.imgTypeDetail {
+  width: 30px;
+}
+
+/*Stats styles*/
+
+.stats {
+  display: flex;
+  flex-direction: column;
+}
+
+.statsName {
+  display: flex;
+  justify-content: center;
+  font-family: "Quick";
+  color: var(--white);
+}
+
+.h2 {
+  background-color: var(--full-color-background);
+  box-shadow: 0px 5px 10px rgb(27, 27, 27);
+  font-size: 16px;
+  font-family: "Quick";
+  color: var(--white);
+  border-radius: 10px;
+  width: 65px;
+  padding: 5px;
+  margin: 5px 0px 0px;
+}
+.h2 h2 {
+  margin: 0;
+}
+
+.statsContainer {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 5px 0;
+}
+
+.statsUnit {
+  display: flex;
+}
+
+.pTittle {
+  font-weight: bold;
+  font-family: "Quick";
+  color: var(--white);
+  font-size: 14px;
+}
+
+.statsUnit p {
+  margin-right: 10px;
+  font-family: "Quick";
+  color: var(--white);
+  font-size: 11px;
+}
