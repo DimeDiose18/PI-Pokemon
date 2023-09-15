@@ -12,7 +12,7 @@ const LandingPage = () => {
         <img src={Logo} alt="gengarlogo" className={styles.logo}/>
     </div>
     <div className={styles.welcomeText}>
-        <h1>Bienvenidos, ingresa por favor!</h1>
+        <h1>Welcome, please enter!</h1>
     </div>
       <Link to={"/home"}>
         <button className={styles.button}><img src={arrow} className={styles.arrow} alt="arrow"/></button>

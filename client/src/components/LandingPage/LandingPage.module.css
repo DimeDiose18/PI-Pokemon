@@ -1,5 +1,5 @@
 .main {
-  background-color: var(--primary-background);
+  background-color: var(--background);
   height: 80vh;
   padding: 30px;
   display: flex;
@@ -19,6 +19,7 @@
 
 .welcomeText {
   font-family: "Dancing";
+  color: var(--white);
 }
 
 .button {
